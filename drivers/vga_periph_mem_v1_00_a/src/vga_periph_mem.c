@@ -51,3 +51,40 @@ void draw_square(Xuint32 BaseAddress){
 			}
 		}
 }
+
+void clear_screen(Xuint32 BaseAddress)
+{
+	clear_text_screen(BaseAddress);
+	clear_graphics_screen(BaseAddress);
+}
+
+void print_char(Xuint32 BaseAddress)
+{
+	char str[] = { s };
+	print_string(BaseAddress, str, 1);
+}
+
+void set_foreground_color(Xuint32 BaseAddress)
+{
+	VGA_PERIPH_MEM_mWriteMemory(BaseAddress + 0x10, color);
+}
+
+void set_background_color(Xuint32 BaseAddress)
+{
+	VGA_PERIPH_MEM_mWriteMemory(BaseAddress + 0x14, color);
+}
+
+void set_font_size(Xuint32 BaseAddress)
+{
+	VGA_PERIPH_MEM_mWriteMemory(BaseAddress + 0x0C, size);
+}
+
+void draw_circle(Xuint32 BaseAddress)
+{
+
+}
+
+void get_resolution(Xuint32 BaseAddress)
+{
+
+}

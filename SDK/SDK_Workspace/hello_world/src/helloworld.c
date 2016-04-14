@@ -40,6 +40,7 @@
 #include "xparameters.h"
 #include "xio.h"
 #include "vga_periph_mem.h"
+#include "my_peripheral.h"
 
 
 void print(char *str);
@@ -65,6 +66,8 @@ int main()
     set_cursor(350);
     print_string(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR, string_s, 6);
 
+    //xil_printf("%c[2J",27);
+    MY_PERIPHERAL_ClearScreen();
 
     return 0;
 }
